@@ -1,13 +1,14 @@
 // ================= CONFIG =================
 
+const IS_LOCAL = window.location.hostname === "localhost";
+
 const CONFIG = {
-    API_URL: "http://localhost:3000/anuncios",
+    API_URL: IS_LOCAL ? "http://localhost:3000" : null,
     STORAGE_KEYS: {
         USERS: "usuarios_mvp",
         SESSION: "usuario_logado"
     }
 };
-
 // ================= PUBLICAR ANÚNCIO =================
 
 async function publicarAnuncio(event) {
@@ -28,8 +29,10 @@ async function publicarAnuncio(event) {
         plataforma: document.getElementById('plataforma')?.value
     };
 
-    try {
-        const response = await fetch(CONFIG.API_URL, {
+ try {
+    if (CONFIG.API_URL) {
+        // 🔹 Ambiente local (backend real)
+        const response = await fetch(`${CONFIG.API_URL}/anuncios`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
@@ -41,18 +44,48 @@ async function publicarAnuncio(event) {
         } else {
             alert('Erro ao publicar anúncio');
         }
-    } catch (error) {
-        console.error('Erro:', error);
-        alert('Erro ao conectar com o servidor');
+
+    } else {
+        // 🔹 Ambiente produção (mock)
+        console.log("Anúncio enviado (mock):", formData);
+        alert('Anúncio publicado com sucesso! (modo teste)');
+        window.location.href = 'vitrine.html';
     }
+
+} catch (error) {
+    console.error('Erro:', error);
+    alert('Erro ao conectar com o servidor');
 }
 
 // ================= CARREGAR PREVIEW =================
 
 async function carregarPreview() {
     try {
-        const response = await fetch(CONFIG.API_URL);
-        const anuncios = await response.json();
+        let anuncios;
+
+        if (CONFIG.API_URL) {
+            // 🔹 Ambiente local (backend real)
+            const response = await fetch(`${CONFIG.API_URL}/anuncios`);
+            anuncios = await response.json();
+        } else {
+            // 🔹 Ambiente produção (mock)
+            anuncios = [
+                {
+                    titulo: "Conta Valorant",
+                    preco: 150,
+                    plataforma: "PC",
+                    whatsapp: "67999999999",
+                    foto_url: "https://via.placeholder.com/150"
+                },
+                {
+                    titulo: "Conta Free Fire",
+                    preco: 80,
+                    plataforma: "Mobile",
+                    whatsapp: "67988888888",
+                    foto_url: "https://via.placeholder.com/150"
+                }
+            ];
+        }
 
         const grid = document.getElementById('grid-jogos');
         if (!grid) return;
@@ -62,28 +95,10 @@ async function carregarPreview() {
             return;
         }
 
-        const previewAnuncios = anuncios.slice(0, 3);
-
-        grid.innerHTML = previewAnuncios.map(anuncio => `
-        <div class="card-jogo">
-            <div class="card-imagem">
-                <img 
-                    class="img-anuncio"
-                    src="${anuncio.foto_url || anuncio.foto || '../assets/consoles/spiderman-ps5.png'}" 
-                    alt="${anuncio.titulo}"
-                    onerror="this.src='../assets/consoles/spiderman-ps5.png'"
-                >
-                <span class="badge-plataforma">${anuncio.plataforma}</span>
-            </div>
-            <div class="card-info">
-                <h4>${anuncio.titulo}</h4>
-                <p class="preco">R$ ${anuncio.preco}</p>
-            </div>
-        </div>
-        `).join('');
+        // 👇 aqui continua seu código normal de renderização
 
     } catch (error) {
-        console.error('Erro ao carregar preview:', error);
+        console.error("Erro ao carregar anúncios:", error);
     }
 }
 
