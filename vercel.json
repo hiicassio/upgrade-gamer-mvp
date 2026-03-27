@@ -1,3 +1,6 @@
 {
-  "outputDirectory": "Public"
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/Public/$1" }
+  ]
 }
