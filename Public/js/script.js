@@ -1,14 +1,14 @@
 // ================= CONFIG =================
 
-const IS_LOCAL = window.location.hostname === "localhost";
-
 const CONFIG = {
-    API_URL: IS_LOCAL ? "http://localhost:3000" : null,
+    API_URL: null, // 🔥 SEM BACKEND POR ENQUANTO
     STORAGE_KEYS: {
         USERS: "usuarios_mvp",
-        SESSION: "usuario_logado"
+        SESSION: "usuario_logado",
+        ANUNCIOS: "anuncios_mvp"
     }
 };
+
 // ================= PUBLICAR ANÚNCIO =================
 
 async function publicarAnuncio(event) {
@@ -22,70 +22,36 @@ async function publicarAnuncio(event) {
     }
 
     const formData = {
+        id: Date.now(),
         titulo: document.getElementById('nomeJogo')?.value,
-        foto: document.getElementById('fotoJogo')?.value,
+        foto_url: document.getElementById('fotoJogo')?.value,
         whatsapp: document.getElementById('whatsapp')?.value,
         preco: document.getElementById('preco')?.value,
         plataforma: document.getElementById('plataforma')?.value
     };
 
- try {
-    if (CONFIG.API_URL) {
-        // 🔹 Ambiente local (backend real)
-        const response = await fetch(`${CONFIG.API_URL}/anuncios`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        });
+    try {
+        // 🔥 SALVA NO LOCALSTORAGE (mock banco)
+        let anuncios = JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEYS.ANUNCIOS)) || [];
 
-        if (response.ok) {
-            alert('Anúncio publicado com sucesso!');
-            window.location.href = 'vitrine.html';
-        } else {
-            alert('Erro ao publicar anúncio');
-        }
+        anuncios.push(formData);
 
-    } else {
-        // 🔹 Ambiente produção (mock)
-        console.log("Anúncio enviado (mock):", formData);
-        alert('Anúncio publicado com sucesso! (modo teste)');
+        localStorage.setItem(CONFIG.STORAGE_KEYS.ANUNCIOS, JSON.stringify(anuncios));
+
+        alert('Anúncio publicado com sucesso!');
         window.location.href = 'vitrine.html';
-    }
 
-} catch (error) {
-    console.error('Erro:', error);
-    alert('Erro ao conectar com o servidor');
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao salvar anúncio');
+    }
 }
 
 // ================= CARREGAR PREVIEW =================
 
-async function carregarPreview() {
+function carregarPreview() {
     try {
-        let anuncios;
-
-        if (CONFIG.API_URL) {
-            // 🔹 Ambiente local (backend real)
-            const response = await fetch(`${CONFIG.API_URL}/anuncios`);
-            anuncios = await response.json();
-        } else {
-            // 🔹 Ambiente produção (mock)
-            anuncios = [
-                {
-                    titulo: "Conta Valorant",
-                    preco: 150,
-                    plataforma: "PC",
-                    whatsapp: "67999999999",
-                    foto_url: "https://via.placeholder.com/150"
-                },
-                {
-                    titulo: "Conta Free Fire",
-                    preco: 80,
-                    plataforma: "Mobile",
-                    whatsapp: "67988888888",
-                    foto_url: "https://via.placeholder.com/150"
-                }
-            ];
-        }
+        let anuncios = JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEYS.ANUNCIOS)) || [];
 
         const grid = document.getElementById('grid-jogos');
         if (!grid) return;
@@ -95,7 +61,19 @@ async function carregarPreview() {
             return;
         }
 
-        // 👇 aqui continua seu código normal de renderização
+        grid.innerHTML = "";
+
+        anuncios.forEach(anuncio => {
+            grid.innerHTML += `
+                <div class="card">
+                    <img src="${anuncio.foto_url || 'https://via.placeholder.com/150'}" alt="jogo">
+                    <h3>${anuncio.titulo}</h3>
+                    <p>${anuncio.plataforma}</p>
+                    <strong>R$ ${anuncio.preco}</strong>
+                    <a href="https://wa.me/55${anuncio.whatsapp}" target="_blank">Contato</a>
+                </div>
+            `;
+        });
 
     } catch (error) {
         console.error("Erro ao carregar anúncios:", error);
@@ -105,8 +83,6 @@ async function carregarPreview() {
 // ================= AUTENTICAÇÃO =================
 
 function initLoginPage() {
-    console.log("Inicializando página de login");
-
     const form = document.getElementById("authForm");
     if (!form) return;
 
@@ -115,11 +91,9 @@ function initLoginPage() {
     const nomeGroup = document.getElementById("nomeGroup");
     const btnSubmit = document.getElementById("btnSubmit");
 
-    let isLogin = true; // 🔥 COMEÇA EM LOGIN
+    let isLogin = true;
 
     function atualizarUI() {
-        if (!formTitle || !btnSubmit || !toggleLink) return;
-
         if (isLogin) {
             formTitle.innerText = "Login";
             btnSubmit.innerText = "Entrar";
@@ -133,13 +107,11 @@ function initLoginPage() {
         }
     }
 
-    if (toggleLink) {
-        toggleLink.addEventListener("click", function(e) {
-            e.preventDefault();
-            isLogin = !isLogin;
-            atualizarUI();
-        });
-    }
+    toggleLink?.addEventListener("click", function(e) {
+        e.preventDefault();
+        isLogin = !isLogin;
+        atualizarUI();
+    });
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -160,7 +132,7 @@ function initLoginPage() {
 
             if (usuario) {
                 localStorage.setItem(CONFIG.STORAGE_KEYS.SESSION, JSON.stringify(usuario));
-                alert("Login realizado com sucesso!");
+                alert("Login realizado!");
                 window.location.href = "index.html";
             } else {
                 alert("Email ou senha incorretos.");
@@ -186,7 +158,7 @@ function initLoginPage() {
             usuarios.push(novoUsuario);
             localStorage.setItem(CONFIG.STORAGE_KEYS.USERS, JSON.stringify(usuarios));
 
-            alert("Conta criada! Faça login.");
+            alert("Conta criada!");
             isLogin = true;
             atualizarUI();
             form.reset();
@@ -208,20 +180,16 @@ function logout() {
 function checkUser() {
     const usuario = localStorage.getItem(CONFIG.STORAGE_KEYS.SESSION);
 
-    // Só redireciona se estiver na tela de login
     if (usuario && document.getElementById("authForm")) {
         window.location.href = "index.html";
     }
 }
 
-// ================= INICIALIZAÇÃO =================
+// ================= INIT =================
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Página carregada");
-
     checkUser();
 
-    // 🔥 Inicialização baseada no DOM (CORRETO)
     if (document.getElementById("authForm")) {
         initLoginPage();
     }
