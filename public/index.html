@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPGRADE - Comunidade Gamer</title>
 
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
+<body>
 
     <header class="header">
         <div class="logo">
@@ -19,13 +18,11 @@
             <a href="index.html" class="active">Home</a>
             <a href="Anunciar.html">Anunciar Jogo</a>
             <a href="vitrine.html">Ver Vitrine</a>
-           <a href="login.html" class="btn-login">Login</a>
+            <a href="login.html" class="btn-login">Login</a>
         </nav>
     </header>
-        
-    <body>
+
     <main>
-        <!-- HERO SECTION -->
         <section class="hero">
             <h2>Troque os melhores artigos gamers na sua cidade</h2>
             <p>Nunca fique longe daquele jogo ou console tão sonhado com a XP Zone.</p>
@@ -33,7 +30,6 @@
             <div class="filtros">
                 <h3>O que deseja hoje?</h3>
                 
-                <!-- FILTROS COM IMAGENS DOS CONSOLES -->
                 <div class="console-filters">
                     <div class="filter-item">
                         <input type="checkbox" id="cidade">
@@ -46,24 +42,25 @@
                     <div class="filter-item">
                         <input type="checkbox" id="xbox">
                         <label for="xbox" class="filter-label">
-                            <img src="../assets/images/consoles/xbox.jpg" alt="Xbox" class="console-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'30\' height=\'30\' viewBox=\'0 0 24 24\' fill=\'%23667eea\'%3E%3Cpath d=\'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z\'/%3E%3C/svg%3E'">
+                            <img src="assets/console-filters/xbox-lordsfallen.png" alt="Xbox" class="console-icon">
                             Xbox One
                         </label>
                     </div>
 
                     <div class="filter-item">
                         <input type="checkbox" id="PlayStation">
-                        <label for="Playstation" class="filter-label">
-                            <img src="../assets/consoles/xbox-ghostrecon.png" alt="PlayStation" class="console-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'30\' height=\'30\' viewBox=\'0 0 24 24\' fill=\'%23e53e3e\'%3E%3Ccircle cx=\'12\' cy=\'12\' r=\'10\'/%3E%3C/svg%3E'">
+                        <label for="PlayStation" class="filter-label">
+                            <img src="assets/console-filters/xbox-ghostrecon.png" alt="PlayStation" class="console-icon">
                             Playstation
                         </label>
                     </div>
+                </div>
+            </div>
         </section>
 
-        <!-- CONHEÇA A XP ZONE -->
         <section class="conheca">
             <h3>Conheça a UPGrade</h3>
-            <p>Aqui você encontra jogadores da sua cidade em uma comunidade segura para você trocar, comprar ou vender seus artigos gamers. Conecte-se com amigos e monte a sua própria comunidade.</p>
+            <p>Aqui você encontra jogadores da sua cidade em uma comunidade segura para você trocar, comprar ou vender seus artigos gamers.</p>
             
             <div class="beneficios">
                 <div class="beneficio-card">🛒 Compra jogos novos e usados</div>
@@ -75,67 +72,61 @@
             <button class="btn-anunciar" onclick="window.location.href='Anunciar.html'">Anunciar Grátis</button>
         </section>
 
-        <!-- SEÇÃO DE CONSOLES EM DESTAQUE -->
         <section class="consoles-destaque">
             <h3>Consoles em Destaque</h3>
             <div class="grid-consoles">
                 <div class="console-card">
-                    <img src="../assets/consoles/spiderman-ps5.png" alt="PlayStation 5"> 
+                    <img src="assets/consoles-destaque/spiderman-ps5.png" alt="PlayStation 5"> 
                     <h4>Play station</h4>
                     <p>A partir de R$ 3.500</p>
                 </div>
                 <div class="console-card">
-                    <img src="../assets/consoles/xbox-ghostrecon.png" alt="Xbox Series X" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' viewBox=\'0 0 24 24\' fill=\'%234299e1\'%3E%3Crect x=\'4\' y=\'4\' width=\'16\' height=\'16\' rx=\'2\'/%3E%3C/svg%3E'">
+                    <img src="assets/consoles-destaque/xbox-ghostrecon.png" alt="Xbox Series X">
                     <h4>Xbox Series X</h4>
                     <p>A partir de R$ 3.200</p>
                 </div>
                 <div class="console-card">
-                    <img src="../assets/consoles/the-last-of-us-playstation.png" alt="Nintendo Switch" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' viewBox=\'0 0 24 24\' fill=\'%23e53e3e\'%3E%3Ccircle cx=\'12\' cy=\'12\' r=\'10\'/%3E%3C/svg%3E'">
+                    <img src="assets/consoles-destaque/the-last-of-us-playstation.png" alt="Nintendo Switch">
                     <h4>Nintendo Switch</h4>
                     <p>A partir de R$ 1.800</p>
                 </div>
                 <div class="console-card">
-                    <img src="../assets/consoles/xbox-lordsfallen.png" alt="Wii U" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' viewBox=\'0 0 24 24\' fill=\'%23975d3b\'%3E%3Crect x=\'4\' y=\'4\' width=\'16\' height=\'16\' rx=\'4\'/%3E%3C/svg%3E'">
+                    <img src="assets/consoles-destaque/xbox-lordsfallen.png" alt="Wii U">
                     <h4>Wii U</h4>
                     <p>A partir de R$ 800</p>
                 </div>
             </div>
         </section>
 
-    <div id="modalAuth" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2 id="modalTitle">Criar Conta na XP Zone</h2>
-        <form id="formAuth">
-            <input type="text" id="nome" placeholder="Seu nome gamer" required>
-            <input type="email" id="email" placeholder="Seu melhor e-mail" required>
-            <input type="password" id="senha" placeholder="Crie uma senha segura" required>
-            <button type="submit" id="btnAcao">Cadastrar Agora</button>
-        </form>
-        <p id="toggleAuth">Já tem conta? <a href="#">Fazer Login</a></p>
-    </div>
-      <button onclick="logout()">Sair</button>
-</div>
+        <div id="modalAuth" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modalTitle">Criar Conta na XP Zone</h2>
+                <form id="formAuth">
+                    <input type="text" id="nome" placeholder="Seu nome gamer" required>
+                    <input type="email" id="email" placeholder="Seu melhor e-mail" required>
+                    <input type="password" id="senha" placeholder="Crie uma senha segura" required>
+                    <button type="submit" id="btnAcao">Cadastrar Agora</button>
+                </form>
+                <p id="toggleAuth">Já tem conta? <a href="#">Fazer Login</a></p>
+                <button onclick="logout()">Sair</button>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <p>UpGradegamer</p>
     </footer>
 
     <script>
-        // JavaScript para interatividade
         document.querySelectorAll('.filter-item input[type="checkbox"]').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 if(this.checked) {
-                    // Desmarcar outros checkboxes se quiser comportamento de rádio
-                    // document.querySelectorAll('.filter-item input[type="checkbox"]').forEach(cb => {
-                    //     if(cb !== this) cb.checked = false;
-                    // });
                     console.log(`Filtro selecionado: ${this.id}`);
                 }
             });
         });
 
-        // Animação suave para os cards
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -151,11 +142,6 @@
             el.style.transition = 'all 0.6s ease-out';
             observer.observe(el);
         });
-        
-      
-        </script>
-
-    
-</main>
+    </script>
 </body>
 </html>
