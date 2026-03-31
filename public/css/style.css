@@ -12,9 +12,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-     margin: 0; /* corrigido */
+    margin: 0; 
     padding: 0;
-
     min-height: 100vh;
     width: 100%;
 }
@@ -410,49 +409,6 @@ footer p::after {
     box-shadow: 0 10px 20px rgba(228, 52, 116, 0.4);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
-    .hero, .conheca, .consoles-destaque {
-        padding: 2rem;
-        margin: 1rem;
-    }
-
-    .filter-label {
-        padding: 10px 15px;
-    }
-    
-    .grid-consoles {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .grid-consoles {
-        grid-template-columns: 1fr;
-    }
-    
-    .beneficios {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Animações */
 @keyframes pulse {
     0% {
@@ -565,8 +521,8 @@ footer p::after {
 /* Controla o tamanho da imagem dentro do card */
 .img-anuncio {
     width: 100%;
-    height: 150px; /* Altura fixa para o anúncio pequeno */
-    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    height: 150px; 
+    object-fit: cover; 
     border-radius: 8px 8px 0 0;
 }
 
@@ -574,24 +530,34 @@ footer p::after {
     background: #2a2a2a;
     border-radius: 8px;
     overflow: hidden;
-    max-width: 250px; /* Garante que o card seja pequeno */
+    max-width: 250px; 
 
 }
 
 .auth-card p{
-color: #ffffff;
-margin-top: 15px;
-font-size: 14px;
-text-align: center;
+    color: #ffffff;
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
 }
 
 #toggleLink{
-color: #ff4d8d;
-font-weight: 600;
-text-decoration: none;
-margin-left: 5px;
+    color: #ff4d8d;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 5px;
 }
 
 #toggleLink:hover{
-text-decoration: underline;
+    text-decoration: underline;
 }
+
+/* ========================================================= */
+/* ================= NOVO MÓBILE INOVADOR ================== */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    /* 1. Ajuste do fundo para mostrar a imagem no mobile */}
+    body {
+        background-position: top center; /* Garante que o topo da imagem apareça */
+        background-attachment: scroll; /* Melhor performance mobile */}
