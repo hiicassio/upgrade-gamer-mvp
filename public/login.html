@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - UPGRADE</title>
-
-<link rel="stylesheet" href="CSS/style.css">
-<script src="js/script.js" defer></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UPGRADE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
+<body class="auth-page"> <header class="header">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none;"><h1>UP<span>Grade</span></h1></a>
+        </div>
+    </header>
 
-<body>
+    <main class="auth-container">
+        <div class="auth-card">
+            <form id="authForm">
+                <h2 id="formTitle">Criar Conta</h2>
 
-<main class="auth-container">
+                <div class="input-group" id="nomeGroup">
+                    <input type="text" id="nome" placeholder="Seu Nome Gamer">
+                </div>
 
-<div class="auth-card">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="E-mail" required>
+                </div>
 
-<form id="authForm">
+                <div class="input-group">
+                    <input type="password" id="senha" placeholder="Senha" required>
+                </div>
 
-<h2 id="formTitle">Criar Conta</h2>
+                <button type="submit" class="btn-login" id="btnSubmit">
+                    Cadastrar
+                </button>
+            </form>
 
-<div class="input-group" id="nomeGroup">
-<input type="text" id="nome" placeholder="Nome">
-</div>
+            <p class="auth-toggle">
+                <span id="toggleText">Já tem conta?</span>
+                <a href="javascript:void(0)" id="toggleLink">Fazer Login</a>
+            </p>
+        </div>
+    </main>
 
-<div class="input-group">
-<input type="email" id="email" placeholder="Email" required>
-</div>
-
-<div class="input-group">
-<input type="password" id="senha" placeholder="Senha" required>
-</div>
-
-<button type="submit" class="btn-login" id="btnSubmit">
-Cadastrar
-</button>
-
-</form>
-
-<p>
-<span id="toggleText">Já tem conta?</span>
-<a href="#" id="toggleLink">Fazer Login</a>
-</p>
-
-</div>
-
-</main>
-
+    <footer>
+        <p>🎮 UPgrade - 2026 🎮</p>
+    </footer>
 </body>
 </html>
