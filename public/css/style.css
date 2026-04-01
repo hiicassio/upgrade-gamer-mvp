@@ -553,11 +553,149 @@ footer p::after {
 }
 
 /* ========================================================= */
-/* ================= NOVO MÓBILE INOVADOR ================== */
+/* ================= NOVO MÓBILE PROFISSIONAL ============== */
 /* ========================================================= */
 
 @media (max-width: 768px) {
-    /* 1. Ajuste do fundo para mostrar a imagem no mobile */}
+    
+    /* 1. CORRIGINDO O FUNDO E O BODY */
     body {
-        background-position: top center; /* Garante que o topo da imagem apareça */
-        background-attachment: scroll; /* Melhor performance mobile */}
+        background-position: center top;
+        background-attachment: fixed; /* Deixa a imagem parada enquanto a tela rola */
+        padding-top: 110px; /* Dá espaço pro Navbar não comer o topo do site */
+    }
+
+    /* 2. NAVBAR COM CARA DE APP (O grande vilão resolvido) */
+    .header {
+        display: grid;
+        grid-template-columns: 1fr auto; /* Logo na esquerda, botão na direita */
+        grid-template-rows: auto auto; /* Duas linhas */
+        gap: 10px;
+        padding: 15px;
+        position: fixed; /* Fica travado no topo da tela */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 26, 31, 0.98); /* Fundo quase sólido para leitura clara */
+        border-bottom: 2px solid #FD9452;
+        z-index: 9999;
+    }
+
+    .logo h1 { 
+        font-size: 1.5rem; 
+        margin: 0; 
+    }
+
+    .btn-login {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* O menu vai para a linha de baixo, espalhado e organizado */
+    .nav-menu {
+        grid-column: 1 / -1; /* Ocupa a linha toda */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0;
+        padding: 5px 0;
+        gap: 8px;
+        overflow-x: auto; /* Permite deslizar se a tela for super fina */
+        scrollbar-width: none;
+    }
+
+    .nav-menu::-webkit-scrollbar { display: none; }
+
+    .nav-menu a { 
+        font-size: 0.85rem; 
+        white-space: nowrap; /* Impede que o texto quebre no meio da palavra */
+    }
+
+    /* 3. HERO (Tirando o paredão e borda feia) */
+    .hero {
+        width: 90%;
+        margin: 0 auto 2rem auto;
+        padding: 2rem 1.5rem;
+        border-left: none; /* 🔥 Remove a barra lateral que esticava o card */
+        border-top: 4px solid #FD9452; /* Joga o detalhe pro topo (mais moderno) */
+        border-radius: 20px;
+        background: rgba(31, 31, 40, 0.92); /* Um pouquinho mais escuro pra ler o texto branco */
+    }
+
+    .hero h2 { 
+        font-size: 2rem; /* Texto levemente menor */
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* 4. FILTROS (Forçando eles a ficarem lado a lado) */
+    .console-filters {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        gap: 12px;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+    }
+    
+    .console-filters::-webkit-scrollbar { display: none; }
+
+    .filter-label {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        min-width: max-content; /* Impede que o botão amasse */
+    }
+
+    /* 5. SEÇÕES DO MEIO MAIS FLUIDAS */
+    .conheca, .consoles-destaque {
+        width: 95%;
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        border-left: none;
+        border-right: none;
+        border-top: 3px solid #E43474;
+    }
+
+    .conheca h3, .consoles-destaque h3 {
+        font-size: 1.6rem;
+    }
+
+    /* 6. VITRINE DE JOGOS: DUAS COLUNAS */
+    .grid-consoles {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 Cards lado a lado */
+        gap: 15px;
+    }
+
+    .console-card img {
+        height: 110px; /* Imagem mais compacta para caber na tela do celular */
+    }
+
+    .console-card h4 {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .console-card p {
+        font-size: 0.9rem;
+    }
+
+    .btn-comprar {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Telas bem pequenas (iPhone SE) */
+@media (max-width: 380px) {
+    .nav-menu a { font-size: 0.75rem; }
+    .hero h2 { font-size: 1.6rem; }
+    .grid-consoles { grid-template-columns: 1fr !important; }
+}
