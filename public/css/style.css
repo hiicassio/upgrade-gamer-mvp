@@ -227,7 +227,7 @@ body {
     box-shadow: 0 10px 20px rgba(228, 52, 116, 0.2);
 }
 
-.btn-anunciar {
+.btn-anunciar.btn-anunciar {
     padding: 1rem 2.5rem;
     background: linear-gradient(90deg, #FD9452, #E43474);
     color: white;
@@ -237,8 +237,13 @@ body {
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s;
-    display: inline-block;
-    margin-top: 1rem;
+    
+    /* 🔥 AS MUDANÇAS PARA CENTRALIZAR ESTÃO AQUI 👇 */
+    display: block; 
+    width: fit-content; /* Garante que o botão não estique a tela toda */
+    margin: 2.5rem auto 0 auto; /* Empurra pra baixo e centraliza automaticamente nas laterais */
+    /* ============================================== */
+    
     box-shadow: 0 10px 20px rgba(228, 52, 116, 0.3);
 }
 
