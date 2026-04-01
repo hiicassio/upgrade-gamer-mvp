@@ -553,85 +553,92 @@ footer p::after {
 }
 
 /* ========================================================= */
-/* ================= NOVO MÓBILE PROFISSIONAL ============== */
+/* ================= NOVO MÓBILE (IGUAL AO FIGMA) ========== */
 /* ========================================================= */
 
 @media (max-width: 768px) {
     
-    /* 1. CORRIGINDO O FUNDO E O BODY */
+    /* 1. MAGIA DA IMAGEM NO TOPO */
     body {
-        background-position: center top;
-        background-attachment: fixed; /* Deixa a imagem parada enquanto a tela rola */
-        padding-top: 110px; /* Dá espaço pro Navbar não comer o topo do site */
+        background-position: top center;
+        background-size: 100% auto; /* A imagem preenche a tela de ponta a ponta no topo */
+        background-attachment: scroll; /* Resolve um bug chato do iPhone que corta a imagem */
+        background-color: #1a1a1f; /* A cor que assume quando a imagem acaba lá pra baixo */
+        padding-top: 75px; 
     }
 
-    /* 2. NAVBAR COM CARA DE APP (O grande vilão resolvido) */
+    /* 2. NAVBAR PRESO E COMPACTO */
     .header {
         display: grid;
-        grid-template-columns: 1fr auto; /* Logo na esquerda, botão na direita */
-        grid-template-rows: auto auto; /* Duas linhas */
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
         gap: 10px;
-        padding: 15px;
-        position: fixed; /* Fica travado no topo da tela */
+        padding: 12px 15px;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        background: rgba(26, 26, 31, 0.98); /* Fundo quase sólido para leitura clara */
+        background: rgba(20, 20, 25, 0.95); /* Bem escuro para destacar o logo */
         border-bottom: 2px solid #FD9452;
         z-index: 9999;
     }
 
-    .logo h1 { 
-        font-size: 1.5rem; 
-        margin: 0; 
-    }
+    .logo h1 { font-size: 1.4rem; margin: 0; }
+    .btn-login { padding: 6px 15px; font-size: 0.85rem; }
 
-    .btn-login {
-        padding: 6px 15px;
-        font-size: 0.9rem;
-    }
-
-    /* O menu vai para a linha de baixo, espalhado e organizado */
     .nav-menu {
-        grid-column: 1 / -1; /* Ocupa a linha toda */
+        grid-column: 1 / -1;
         display: flex;
         justify-content: space-between;
         width: 100%;
         margin: 0;
         padding: 5px 0;
         gap: 8px;
-        overflow-x: auto; /* Permite deslizar se a tela for super fina */
+        overflow-x: auto;
         scrollbar-width: none;
     }
-
     .nav-menu::-webkit-scrollbar { display: none; }
+    .nav-menu a { font-size: 0.85rem; white-space: nowrap; }
 
-    .nav-menu a { 
-        font-size: 0.85rem; 
-        white-space: nowrap; /* Impede que o texto quebre no meio da palavra */
-    }
-
-    /* 3. HERO (Tirando o paredão e borda feia) */
+    /* 3. HERO TRANSPARENTE (O TEXTO FLUTUA NA IMAGEM) */
     .hero {
-        width: 90%;
-        margin: 0 auto 2rem auto;
-        padding: 2rem 1.5rem;
-        border-left: none; /* 🔥 Remove a barra lateral que esticava o card */
-        border-top: 4px solid #FD9452; /* Joga o detalhe pro topo (mais moderno) */
-        border-radius: 20px;
-        background: rgba(31, 31, 40, 0.92); /* Um pouquinho mais escuro pra ler o texto branco */
+        width: 100%;
+        margin: 15vh 0 0 0; /* Empurra o texto pra baixo pra mostrar o rosto do personagem */
+        padding: 1rem 1.5rem;
+        background: transparent; /* 🔥 TIRA O CAIXOTE! A imagem aparece com tudo! */
+        border: none; 
+        box-shadow: none;
+        text-align: center;
     }
 
     .hero h2 { 
-        font-size: 2rem; /* Texto levemente menor */
-        line-height: 1.2;
+        font-size: 2.2rem; 
+        line-height: 1.1;
+        text-shadow: 2px 2px 15px #000000; /* Sombra forte pro texto não sumir na imagem */
     }
 
     .hero p {
         font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        text-shadow: 1px 1px 10px #000000;
     }
 
-    /* 4. FILTROS (Forçando eles a ficarem lado a lado) */
+    /* 4. FILTROS VIRAM UM CARD (O que deseja hoje?) */
+    .filtros {
+        background: #1f1f28; /* Fundo sólido volta aqui embaixo */
+        border-radius: 25px 25px 0 0; /* Arredonda igual ao Figma */
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+        border-top: 3px solid #FD9452;
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.6); /* Sombra pra cima */
+    }
+
+    .filtros h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
     .console-filters {
         display: flex !important;
         flex-direction: row !important;
@@ -641,61 +648,38 @@ footer p::after {
         padding-bottom: 10px;
         scrollbar-width: none;
     }
-    
     .console-filters::-webkit-scrollbar { display: none; }
 
     .filter-label {
         padding: 10px 15px;
         font-size: 0.9rem;
         white-space: nowrap;
-        min-width: max-content; /* Impede que o botão amasse */
+        min-width: max-content;
     }
 
-    /* 5. SEÇÕES DO MEIO MAIS FLUIDAS */
+    /* 5. SEÇÕES DE BAIXO */
     .conheca, .consoles-destaque {
-        width: 95%;
+        width: 100%;
         padding: 1.5rem;
-        margin: 1.5rem auto;
-        border-left: none;
-        border-right: none;
-        border-top: 3px solid #E43474;
+        margin: 0 auto;
+        border: none; /* Layout clean */
+        border-top: 1px solid rgba(253, 148, 82, 0.2);
+        border-radius: 0;
     }
 
-    .conheca h3, .consoles-destaque h3 {
-        font-size: 1.6rem;
-    }
-
-    /* 6. VITRINE DE JOGOS: DUAS COLUNAS */
     .grid-consoles {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* 2 Cards lado a lado */
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px;
     }
 
-    .console-card img {
-        height: 110px; /* Imagem mais compacta para caber na tela do celular */
-    }
-
-    .console-card h4 {
-        font-size: 1rem;
-        margin-top: 10px;
-    }
-
-    .console-card p {
-        font-size: 0.9rem;
-    }
-
-    .btn-comprar {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-        width: 90%;
-        margin-bottom: 10px;
-    }
+    .console-card img { height: 110px; }
+    .console-card h4 { font-size: 1rem; margin-top: 10px; }
+    .console-card p { font-size: 0.9rem; }
+    .btn-comprar { padding: 0.5rem; font-size: 0.8rem; width: 90%; margin-bottom: 10px; }
 }
 
-/* Telas bem pequenas (iPhone SE) */
 @media (max-width: 380px) {
-    .nav-menu a { font-size: 0.75rem; }
-    .hero h2 { font-size: 1.6rem; }
+    .hero h2 { font-size: 1.8rem; }
     .grid-consoles { grid-template-columns: 1fr !important; }
 }
