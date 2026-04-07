@@ -566,11 +566,12 @@ footer p::after {
 
 @media (max-width: 768px) {
     
+    /* 1. FUNDO ÉPICO (COM CORREÇÃO PARA IPHONE) */
     body {
-        background-size: cover; 
-        background-position: center top; 
-        background-attachment: fixed;
-        background-color: #111116; 
+        background-position: top center;
+        background-size: 100% auto; /* Trava a largura pra encaixar perfeito no celular */
+        background-attachment: scroll; /* 🔥 MATAMOS O BUG DO SAFARI AQUI */
+        background-color: #1a1a1f;
     }
 
     .header {
@@ -628,17 +629,15 @@ footer p::after {
     
     .nav-menu a.active::after { display: none; }
 
+ /* 3. HERO (O ROSTO LIVRE E O TÍTULO NEON) */
     .hero {
-        width: 100%; 
-        max-width: 100%;
-        margin: 0; 
-        padding: 40vh 1.5rem 2rem 1.5rem; 
-        background: linear-gradient(180deg, rgba(17,17,22,0) 0%, rgba(17,17,22,0.8) 40%, rgba(17,17,22,1) 100%) !important; 
+        width: 100%;
+        margin: 0;
+        padding: 35vh 1.5rem 3rem 1.5rem; /* Ajustei pra 35vh pro texto colar certinho no fim da foto */
+        background: linear-gradient(to top, #1a1a1f 0%, rgba(26,26,31,0.9) 60%, transparent 100%) !important; 
         border: none !important; 
         box-shadow: none !important;
         text-align: center;
-        position: relative;
-        z-index: 1;
     }
 
     .hero h2 { 
