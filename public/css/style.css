@@ -561,92 +561,112 @@ footer p::after {
 }
 
 /* ========================================================= */
-/* ================= NOVO MÓBILE (IGUAL AO FIGMA) ========== */
+/* ================= MÓBILE MODO APP PREMIUM =============== */
 /* ========================================================= */
 
 @media (max-width: 768px) {
     
-    /* 1. MAGIA DA IMAGEM NO TOPO */
     body {
-        background-position: top center;
-        background-size: 100% auto; /* A imagem preenche a tela de ponta a ponta no topo */
-        background-attachment: scroll; /* Resolve um bug chato do iPhone que corta a imagem */
-        background-color: #1a1a1f; /* A cor que assume quando a imagem acaba lá pra baixo */
-        padding-top: 75px; 
-        
+        background-size: cover; 
+        background-position: center top; 
+        background-attachment: fixed;
+        background-color: #111116; 
     }
 
-    /* 2. NAVBAR PRESO E COMPACTO */
     .header {
         display: grid;
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto;
-        gap: 10px;
+        gap: 12px 10px;
         padding: 12px 15px;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        background: rgba(20, 20, 25, 0.95); /* Bem escuro para destacar o logo */
-        border-bottom: 2px solid #FD9452;
+        background: rgba(17, 17, 22, 0.85);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(253, 148, 82, 0.3);
         z-index: 9999;
     }
 
-    .logo h1 { font-size: 1.4rem; margin: 0; }
-    .btn-login { padding: 6px 15px; font-size: 0.85rem; }
+    .logo h1 { font-size: 1.4rem; margin: 0; letter-spacing: -0.5px; }
+    
+    .btn-login { 
+        padding: 6px 14px; 
+        font-size: 0.85rem; 
+        box-shadow: 0 4px 15px rgba(253, 148, 82, 0.4); 
+    }
 
     .nav-menu {
         grid-column: 1 / -1;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: center;
         width: 100%;
         margin: 0;
-        padding: 5px 0;
-        gap: 8px;
+        padding: 0 0 5px 0;
+        gap: 10px;
         overflow-x: auto;
         scrollbar-width: none;
     }
+    
     .nav-menu::-webkit-scrollbar { display: none; }
-    .nav-menu a { font-size: 0.85rem; white-space: nowrap; }
+    
+    .nav-menu a { 
+        font-size: 0.85rem; 
+        white-space: nowrap; 
+        background: rgba(255, 255, 255, 0.05); 
+        padding: 6px 12px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-menu a.active {
+        background: rgba(253, 148, 82, 0.15);
+        border-color: #FD9452;
+    }
+    
+    .nav-menu a.active::after { display: none; }
 
-    /* 3. HERO TRANSPARENTE (O TEXTO FLUTUA NA IMAGEM) */
     .hero {
-        width: 100%;
-        margin: 15vh 0 0 0; /* Empurra o texto pra baixo pra mostrar o rosto do personagem */
-        padding: 1rem 1.5rem;
-        background: transparent; /* 🔥 TIRA O CAIXOTE! A imagem aparece com tudo! */
-        border: none; 
-        box-shadow: none;
+        width: 100%; 
+        max-width: 100%;
+        margin: 0; 
+        padding: 40vh 1.5rem 2rem 1.5rem; 
+        background: linear-gradient(180deg, rgba(17,17,22,0) 0%, rgba(17,17,22,0.8) 40%, rgba(17,17,22,1) 100%) !important; 
+        border: none !important; 
+        box-shadow: none !important;
         text-align: center;
+        position: relative;
+        z-index: 1;
     }
 
     .hero h2 { 
-        font-size: 2.2rem; 
-        line-height: 1.1;
-        text-shadow: 2px 2px 15px #000000; /* Sombra forte pro texto não sumir na imagem */
+        font-size: 2.1rem; 
+        line-height: 1.15;
+        text-shadow: none; 
+        margin-bottom: 0.8rem;
     }
 
     .hero p {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #fff;
-        text-shadow: 1px 1px 10px #000000;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #d1d1d1;
+        margin-bottom: 1.5rem;
     }
 
-    /* 4. FILTROS VIRAM UM CARD (O que deseja hoje?) */
     .filtros {
-        background: #1f1f28; /* Fundo sólido volta aqui embaixo */
-        border-radius: 25px 25px 0 0; /* Arredonda igual ao Figma */
-        padding: 1.5rem 1rem;
-        margin-top: 2rem;
-        border-top: 3px solid #FD9452;
-        box-shadow: 0 -10px 30px rgba(0,0,0,0.6); /* Sombra pra cima */
+        background: #111116; 
+        padding: 0 0 1.5rem 0; 
+        margin: 0;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        border: none;
+        box-shadow: none;
     }
 
-    .filtros h3 {
-        font-size: 1.3rem;
-        text-align: center;
-    }
+    .filtros h3 { padding: 0 1.5rem; font-size: 1.3rem; margin-bottom: 1rem; }
 
     .console-filters {
         display: flex !important;
@@ -654,27 +674,32 @@ footer p::after {
         flex-wrap: nowrap !important;
         overflow-x: auto;
         gap: 12px;
-        padding-bottom: 10px;
+        padding: 0 1.5rem 10px 1.5rem; 
         scrollbar-width: none;
     }
+    
     .console-filters::-webkit-scrollbar { display: none; }
 
     .filter-label {
-        padding: 10px 15px;
+        padding: 10px 16px;
         font-size: 0.9rem;
         white-space: nowrap;
         min-width: max-content;
+        background: #1f1f28; 
+        border: none;
     }
 
-    /* 5. SEÇÕES DE BAIXO */
     .conheca, .consoles-destaque {
         width: 100%;
         padding: 1.5rem;
-        margin: 0 auto;
-        border: none; /* Layout clean */
-        border-top: 1px solid rgba(253, 148, 82, 0.2);
+        margin: 0;
+        background: #111116;
+        border: none; 
         border-radius: 0;
+        box-shadow: none;
     }
+
+    .consoles-destaque h3 { font-size: 1.4rem; margin-bottom: 1.5rem; padding-left: 0; }
 
     .grid-consoles {
         display: grid !important;
@@ -682,13 +707,23 @@ footer p::after {
         gap: 12px;
     }
 
-    .console-card img { height: 110px; }
-    .console-card h4 { font-size: 1rem; margin-top: 10px; }
-    .console-card p { font-size: 0.9rem; }
-    .btn-comprar { padding: 0.5rem; font-size: 0.8rem; width: 90%; margin-bottom: 10px; }
+    .console-card {
+        background: linear-gradient(145deg, #1f1f28, #16161d);
+        border: 1px solid rgba(255, 255, 255, 0.05); 
+        border-radius: 16px; 
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        padding-bottom: 10px;
+    }
+
+    .console-card img { height: 120px; border-bottom: 2px solid #E43474; border-radius: 16px 16px 0 0; }
+    .console-card h4 { font-size: 1rem; margin-top: 12px; }
+    .console-card p { font-size: 0.85rem; color: #b0b0b0; margin-bottom: 10px;}
+    
+    .btn-comprar { padding: 0.6rem; font-size: 0.8rem; width: 85%; margin-bottom: 5px; border-radius: 12px; }
 }
 
 @media (max-width: 380px) {
+    .hero { padding-top: 35vh; }
     .hero h2 { font-size: 1.8rem; }
     .grid-consoles { grid-template-columns: 1fr !important; }
 }
