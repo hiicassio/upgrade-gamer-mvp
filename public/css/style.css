@@ -725,4 +725,18 @@ footer p::after {
     .hero { padding-top: 35vh; }
     .hero h2 { font-size: 1.8rem; }
     .grid-consoles { grid-template-columns: 1fr !important; }
+
+    /* AJUSTES DA PÁGINA DE ANUNCIAR NO MOBILE */
+    .container-anuncio {
+        width: 90%;
+        padding: 20px 15px;
+        margin: 2rem auto;
+    }
+
+    .btn-anunciar, .btn-publicar {
+        padding: 0.8rem 1.5rem; /* Diminui a altura */
+        font-size: 0.95rem; /* Texto mais delicado */
+        width: 100%; 
+        border-radius: 15px; /* Menos arredondado, mais moderno */
+    }
 }

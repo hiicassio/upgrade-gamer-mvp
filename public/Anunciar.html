@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UpGradegamer - Anunciar Jogo</title>
+    <title>UPGrade - Preparar Loot</title>
+    
+    <meta property="og:title" content="UPGrade | Anunciar Jogo">
+    <meta property="og:description" content="Desapegue dos jogos que já zerou e faça rolos com a galera da sua cidade.">
+    
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
-    
-    
 </head>
 
 <body>
@@ -18,62 +19,70 @@
         <nav class="nav-menu">
             <a href="index.html">Home</a>
             <a href="Anunciar.html" class="active">Anunciar Jogo</a>
-            <button class="btn-login">Login</button>
+            <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" class="btn-login" style="text-decoration: none;">Lobby VIP</a>
         </nav>
     </header>
 
     <main class="container-anuncio">
-   
-    <form id="form-anuncio">
+        <h2 style="color: #FD9452; text-align: center; margin-bottom: 20px;">Preparar Loot para Anúncio</h2>
+        
         <div class="campo">
-            <label>Nome do Jogo</label>
-            <input type="text" id="nomeJogo" name="titulo" placeholder="Ex: The Last of Us Part II" required>
+            <label for="lootItem">Qual é o Loot? (Jogo ou Console)</label>
+            <input type="text" id="lootItem" placeholder="Ex: The Last of Us Part II" required>
         </div>
 
         <div class="campo">
-            <label>Link da Foto (Capa)</label>
-            <input type="url" id="fotoJogo" name="foto" placeholder="https://exemplo.com/imagem.jpg">
-
-        </div>
-
-        <div class="campo">
-            <label> Seu WhatsApp</label>
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(DDD) 99999-9999" required>
-        </div>
-
-        <div class="campo">
-            <label> Preço ou Proposta de Troca</label>
-            <input type="text" id="preco" name="preco" placeholder="Ex: R$ 150 ou troco por" required>
-        </div>
-
-        <div class="campo">
-            <label>Plataforma</label>
-            <select id="plataforma" name="plataforma" required>
+            <label for="lootPlataforma">Plataforma</label>
+            <select id="lootPlataforma" required>
                 <option value="">Selecione a plataforma</option>
-                <option value="PlayStation 5">PlayStation 5</option>
-                <option value="PlayStation 4">PlayStation 4</option>
-                <option value="Xbox Series X/S">Xbox Series X/S</option>
-                <option value="Xbox One">Xbox One</option>
+                <option value="PlayStation">PlayStation</option>
+                <option value="Xbox">Xbox</option>
                 <option value="Nintendo Switch">Nintendo Switch</option>
                 <option value="PC">PC</option>
-                <option value="Wii">Wii</option>
+                <option value="Outros">Outros (Retrô, etc)</option>
             </select>
         </div>
 
-     
-           <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" class="btn-anunciar">
-    Entrar no Lobby (WhatsApp VIP)
-</a>
+        <div class="campo">
+            <label for="lootQuest">A sua Quest (Preço ou o que quer em troca)</label>
+            <input type="text" id="lootQuest" placeholder="Ex: R$ 150 ou troco por Zelda" required>
+        </div>
 
-        
-        </button>
-    
-    </section>
-</main>
+        <button class="btn-publicar" onclick="enviarParaWhatsApp()">Falar com a Moderação</button>
+    </main>
 
     <footer>
-        <p>🎮UPgrade🎮</p>
+        <p>UPgrade</p>
     </footer>
 
+    <script>
+    function enviarParaWhatsApp() {
+        // Pega os valores digitados
+        var loot = document.getElementById('lootItem').value;
+        var plataforma = document.getElementById('lootPlataforma').value;
+        var quest = document.getElementById('lootQuest').value;
+
+        // Se o cara não preencheu, o site avisa e não deixa enviar
+        if(!loot || !plataforma || !quest) {
+            alert("🕹️ Ops! Preencha qual é o Loot, a Plataforma e a sua Quest antes de enviar.");
+            return;
+        }
+
+        // Monta o texto que vai chegar pra você
+        var texto = "Fala moderação! Quero anunciar um item na comunidade:%0A%0A";
+        texto += "🎮 *Loot:* " + loot + "%0A";
+        texto += "🕹️ *Plataforma:* " + plataforma + "%0A";
+        texto += "⚔️ *Minha Quest:* " + quest + "%0A%0A";
+        texto += "Segue a foto do jogo. Pode aprovar pro grupo?";
+
+        // 🚨 MUDE AQUI: Coloque o seu número com DDD (apenas números)
+        var numeroModera = "5567999999999"; 
+        
+        var linkZap = "https://wa.me/" + numeroModera + "?text=" + texto;
+
+        // Abre o WhatsApp numa aba nova
+        window.open(linkZap, '_blank');
+    }
+    </script>
 </body>
 </html>
