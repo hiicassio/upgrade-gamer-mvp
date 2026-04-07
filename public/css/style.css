@@ -16,6 +16,9 @@ body {
     padding: 0;
     min-height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 
@@ -336,7 +339,7 @@ footer {
     padding: 2rem;
     background: #1a1a1f;
     border-top: 2px solid #FD9452;
-    margin-top: 3rem;
+    margin-top: auto
 }
 
 footer p {
@@ -570,6 +573,7 @@ footer p::after {
         background-attachment: scroll; /* Resolve um bug chato do iPhone que corta a imagem */
         background-color: #1a1a1f; /* A cor que assume quando a imagem acaba lá pra baixo */
         padding-top: 75px; 
+        
     }
 
     /* 2. NAVBAR PRESO E COMPACTO */
