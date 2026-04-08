@@ -57,30 +57,26 @@
 
     <script>
     function enviarParaWhatsApp() {
-        // Pega os valores digitados
         var loot = document.getElementById('lootItem').value;
         var plataforma = document.getElementById('lootPlataforma').value;
         var quest = document.getElementById('lootQuest').value;
 
-        // Se o cara não preencheu, o site avisa e não deixa enviar
         if(!loot || !plataforma || !quest) {
             alert("🕹️ Ops! Preencha qual é o Loot, a Plataforma e a sua Quest antes de enviar.");
             return;
         }
 
-        // Monta o texto que vai chegar pra você
         var texto = "Fala moderação! Quero anunciar um item na comunidade:%0A%0A";
         texto += "🎮 *Loot:* " + loot + "%0A";
         texto += "🕹️ *Plataforma:* " + plataforma + "%0A";
         texto += "⚔️ *Minha Quest:* " + quest + "%0A%0A";
         texto += "Segue a foto do jogo. Pode aprovar pro grupo?";
 
-        // 🚨 MUDE AQUI: Coloque o seu número com DDD (apenas números)
-        var numeroModera = "5567999999999"; 
+        // ✅ Seu número atualizado com o código do país (55)
+        var numeroModera = "5511984962661"; 
         
         var linkZap = "https://wa.me/" + numeroModera + "?text=" + texto;
 
-        // Abre o WhatsApp numa aba nova
         window.open(linkZap, '_blank');
     }
     </script>
