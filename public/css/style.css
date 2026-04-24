@@ -740,3 +740,136 @@ footer p::after {
         border-radius: 15px; /* Menos arredondado, mais moderno */
     }
 }
+/* Container Principal da Vitrine */
+.vitrine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* O Card de Loot */
+.card-loot {
+    background: rgba(255, 255, 255, 0.03); /* Fundo quase invisível */
+    backdrop-filter: blur(15px); /* Efeito de vidro fosco */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda fina de vidro */
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+/* Efeito de Hover no Card */
+.card-loot:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid #FD9452; /* Brilho laranja ao passar o mouse */
+    box-shadow: 0 15px 35px rgba(253, 148, 82, 0.15);
+}
+
+/* Imagem do Jogo */
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-loot:hover .card-image img {
+    transform: scale(1.1); /* Zoom suave na imagem no hover */
+}
+
+/* Badges (Etiquetas de Plataforma) */
+.badge-plataforma {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.ps5 { background: #003087; color: white; }
+.xbox { background: #107C10; color: white; }
+.nintendo { background: #E60012; color: white; }
+.multi { background: linear-gradient(45deg, #333, #666); color: white; }
+
+/* Informações do Card */
+.card-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-info h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.gamer-name {
+    font-size: 0.85rem;
+    color: #FD9452; /* Nome do gamer em destaque */
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Box da Quest (Troca/Preço) */
+.quest-box {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 3px solid #FD9452;
+}
+
+.quest-box span {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.quest-box p {
+    font-size: 0.95rem;
+    color: #eee;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Botão de Interesse */
+.btn-interesse {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #FD9452 0%, #FF5E98 100%);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-interesse:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 5px 15px rgba(255, 94, 152, 0.4);
+}
