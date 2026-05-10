@@ -192,7 +192,8 @@ body {
     width: 90%;
     max-width: 1200px;
     border-right: 5px solid #E43474;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    
 }
 .conheca h3 {
     font-size: 2rem;
