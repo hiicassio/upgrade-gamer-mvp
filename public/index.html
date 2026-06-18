@@ -1,140 +1,347 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPGRADE - Comunidade Gamer</title>
+    <title>UPGrade — Comunidade Gamer de Campo Grande | Troca, Compra e Venda</title>
+    <meta name="description" content="Jogos caros? Jogue com quem entende. A UPGrade conecta gamers de Campo Grande para trocar, comprar e vender jogos com segurança. Entre na guild grátis.">
+    <meta name="keywords" content="jogos usados Campo Grande, troca de jogos, comunidade gamer MS, Xbox, PlayStation, Nintendo">
+    <meta property="og:title" content="UPGrade | Comunidade Gamer de Campo Grande">
+    <meta property="og:description" content="Pare de pagar caro e jogar sozinho. Troque, compre e venda com gamers da sua cidade.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#1a1a1f">
 
-    <link rel="stylesheet" href="css/style.css">
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
+    <div class="bg-scene" aria-hidden="true"></div>
+
+    <div class="bg-effects" aria-hidden="true">
+        <div class="bg-grid"></div>
+        <div class="bg-glow bg-glow--left"></div>
+        <div class="bg-glow bg-glow--right"></div>
+    </div>
+
     <header class="header">
-        <div class="logo">
-            <h1>UP<span>Grade</span></h1>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <h1>UP<span>Grade</span></h1>
+            </a>
+
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="anunciar.html">Anunciar Jogo</a>
+                <a href="vitrine.html">Ver Vitrine</a>
+                <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" class="btn-login" target="_blank" rel="noopener">Lobby VIP</a>
+            </nav>
         </div>
-        <nav class="nav-menu">
-            <a href="index.html" class="active">Home</a>
-            <a href="Anunciar.html">Anunciar Jogo</a>
-            <a href="vitrine.html">Ver Vitrine</a>
-            <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" class="btn-login" target="_blank">Lobby VIP</a>
-        </nav>
+        <div class="nav-overlay"></div>
     </header>
 
+    <div class="site-container">
     <main>
         <section class="hero">
-            <h2>Cansado de jogar com aleatórios?</h2>
-            <p> A gente resolve isso. Troque os games que estão parados na estante, descubra novos mundos e conecte-se com quem respira videogame. </p>
-            
+            <div class="hero-content">
+                <span class="hero-badge animate-fade-in">📍 Campo Grande/MS · Comunidade gratuita</span>
+
+                <h2 class="hero-title animate-slide-up">
+                    Jogos caros?<br>
+                    <span class="text-gradient">Jogue com quem entende.</span>
+                </h2>
+
+                <p class="hero-subtitle animate-slide-up delay-1">
+                    Pare de pagar preço de lançamento e jogar com aleatórios. Na UPGrade você troca, compra e vende com gamers da sua cidade — em um ambiente seguro e moderado.
+                </p>
+
+                <div class="hero-cta animate-slide-up delay-2">
+                    <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" rel="noopener" class="btn-primary">
+                        <span class="btn-icon">⚔️</span>
+                        Entrar na Guild — Grátis
+                    </a>
+                    <a href="vitrine.html" class="btn-secondary">Ver Loots Disponíveis</a>
+                </div>
+
+                <section class="game-showcase glass reveal" aria-label="Jogos em negociação">
+                    <div class="xp-particles" aria-hidden="true">
+                        <span class="xp-particle"></span>
+                        <span class="xp-particle"></span>
+                        <span class="xp-particle"></span>
+                        <span class="xp-particle"></span>
+                        <span class="xp-particle"></span>
+                    </div>
+                    <div class="game-float-icons" aria-hidden="true">
+                        <span class="float-icon float-icon--1">🎮</span>
+                        <span class="float-icon float-icon--2">⚔️</span>
+                        <span class="float-icon float-icon--3">🏆</span>
+                        <span class="float-icon float-icon--4">⭐</span>
+                    </div>
+                    <p class="game-showcase-label">▶ Loots ao vivo</p>
+                    <div class="game-marquee">
+                        <div class="game-marquee-track">
+                            <div class="game-chip"><img src="assets/vitrine/elden-ring.jpg" alt=""><span>Elden Ring <span class="chip-price">R$ 220</span></span></div>
+                            <div class="game-chip"><img src="assets/vitrine/gta-5.jpg" alt=""><span>GTA V <span class="chip-price">R$ 90</span></span></div>
+                            <div class="game-chip"><img src="assets/vitrine/mario-kart-world.jpg" alt=""><span>Mario Kart <span class="chip-price">Troca</span></span></div>
+                            <div class="game-chip"><img src="assets/vitrine/resident-evil.jpg" alt=""><span>RE4 <span class="chip-price">R$ 180</span></span></div>
+                            <div class="game-chip"><img src="assets/consoles/spiderman-ps5.png" alt=""><span>Spider-Man 2 <span class="chip-price">R$ 150</span></span></div>
+                            <div class="game-chip"><img src="assets/consoles/xbox-ghostrecon.png" alt=""><span>Ghost Recon <span class="chip-price">R$ 110</span></span></div>
+                            <div class="game-chip"><img src="assets/vitrine/elden-ring.jpg" alt=""><span>Elden Ring <span class="chip-price">R$ 220</span></span></div>
+                            <div class="game-chip"><img src="assets/vitrine/gta-5.jpg" alt=""><span>GTA V <span class="chip-price">R$ 90</span></span></div>
+                            <div class="game-chip"><img src="assets/vitrine/mario-kart-world.jpg" alt=""><span>Mario Kart <span class="chip-price">Troca</span></span></div>
+                            <div class="game-chip"><img src="assets/vitrine/resident-evil.jpg" alt=""><span>RE4 <span class="chip-price">R$ 180</span></span></div>
+                            <div class="game-chip"><img src="assets/consoles/spiderman-ps5.png" alt=""><span>Spider-Man 2 <span class="chip-price">R$ 150</span></span></div>
+                            <div class="game-chip"><img src="assets/consoles/xbox-ghostrecon.png" alt=""><span>Ghost Recon <span class="chip-price">R$ 110</span></span></div>
+                        </div>
+                    </div>
+                    <div class="pixel-controller" aria-hidden="true">
+                        <svg viewBox="0 0 28 20" fill="none"><rect x="1" y="6" width="26" height="12" rx="4" stroke="#FD9452" stroke-width="1.5" fill="rgba(0,0,0,0.2)"/><circle cx="8" cy="12" r="2" fill="#E43474"/><rect x="18" y="10" width="2" height="4" fill="#FD9452"/><rect x="16" y="12" width="6" height="2" fill="#FD9452"/></svg>
+                        <span>+XP</span>
+                    </div>
+                </section>
+
+                <div class="hero-stats animate-fade-in delay-3">
+                    <div class="stat-card">
+                        <strong>200+</strong>
+                        <span>Gamers ativos</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>50%</strong>
+                        <span>Economia em trocas</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>100%</strong>
+                        <span>Local e seguro</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="filtros">
-                <h3>O que deseja hoje?</h3>
-                
+                <h3>Qual plataforma você joga?</h3>
                 <div class="console-filters">
                     <div class="filter-item">
                         <input type="checkbox" id="cidade">
                         <label for="cidade" class="filter-label">
                             <span class="filter-icon">📍</span>
-                            Filtrar por cidade
+                            Campo Grande
                         </label>
                     </div>
-
                     <div class="filter-item">
                         <input type="checkbox" id="xbox">
                         <label for="xbox" class="filter-label">
-                            <img src="assets/consoles/xbox-lordsfallen.png"Xbox" class="console-icon">
-                            Xbox One
+                            <img src="assets/consoles/xbox-lordsfallen.png" alt="Xbox" class="console-icon">
+                            Xbox
                         </label>
                     </div>
-
                     <div class="filter-item">
-                        <input type="checkbox" id="PlayStation">
-                        <label for="PlayStation" class="filter-label">
-                            <img src="assets/consoles/xbox-ghostrecon.png"PlayStation" class="console-icon">
-                            Playstation
+                        <input type="checkbox" id="playstation">
+                        <label for="playstation" class="filter-label">
+                            <img src="assets/consoles/spiderman-ps5.png" alt="PlayStation" class="console-icon">
+                            PlayStation
+                        </label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="nintendo">
+                        <label for="nintendo" class="filter-label">
+                            <img src="assets/consoles/the-last-of-us-playstation.png" alt="Nintendo" class="console-icon">
+                            Nintendo
                         </label>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="conheca">
-            <h3>Conheça a UPGrade</h3>
-            <p>Aqui você encontra jogadores da sua cidade em uma comunidade segura para você trocar, comprar ou vender seus artigos gamers.</p>
-            
-            <div class="beneficios">
-                <div class="beneficio-card">🛒 Compra jogos novos e usados</div>
-                <div class="beneficio-card">💰 Venda seus artigos gamers</div>
-                <div class="beneficio-card">⭐ Ganhe XP a cada interação</div>
-                <div class="beneficio-card">🔄 Troque seus jogos por outros</div>
+        <section class="problema section-block">
+            <div class="section-header reveal">
+                <span class="section-tag">O problema</span>
+                <h3>Por que a gente criou a UPGrade?</h3>
             </div>
-            
-           <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" class="btn-anunciar" style="text-decoration: none;">
-    Entrar para Guild
-</a>
-        
+            <div class="problema-grid">
+                <div class="problema-card reveal">
+                    <div class="problema-icon">💸</div>
+                    <h4>Jogos cada vez mais caros</h4>
+                    <p>Lançamentos a R$ 300+ e você zera em duas semanas. O jogo vai pra estante e o bolso sangra.</p>
+                </div>
+                <div class="problema-card reveal">
+                    <div class="problema-icon">😶</div>
+                    <h4>Carência gamer real</h4>
+                    <p>Matchmaking com desconhecidos tóxicos, sem squad fixo, sem ninguém pra trocar ideia sobre games.</p>
+                </div>
+                <div class="problema-card reveal">
+                    <div class="problema-icon">🔒</div>
+                    <h4>OLX sem confiança</h4>
+                    <p>Anúncios genéricos, golpes, gente de outra cidade. Você precisa de uma comunidade, não de um classificado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="conheca section-block">
+            <div class="section-header reveal">
+                <span class="section-tag">A solução</span>
+                <h3>Conheça a UPGrade</h3>
+                <p>A comunidade gamer de Campo Grande onde você troca, compra e vende com quem respira videogame — e ainda ganha XP a cada interação.</p>
+            </div>
+
+            <div class="beneficios">
+                <div class="beneficio-card">
+                    <span class="beneficio-emoji">🛒</span>
+                    <h4>Compre mais barato</h4>
+                    <p>Jogos usados e novos com preço justo, direto de quem joga na sua cidade.</p>
+                </div>
+                <div class="beneficio-card">
+                    <span class="beneficio-emoji">💰</span>
+                    <h4>Venda o que não joga</h4>
+                    <p>Transforme jogos parados em dinheiro ou em novos loots pra sua estante.</p>
+                </div>
+                <div class="beneficio-card">
+                    <span class="beneficio-emoji">🔄</span>
+                    <h4>Troque sem perder</h4>
+                    <p>Zerou? Troca por outro título. Economize até 50% comparado ao preço de loja.</p>
+                </div>
+                <div class="beneficio-card">
+                    <span class="beneficio-emoji">⭐</span>
+                    <h4>Ganhe XP</h4>
+                    <p>Cada troca, venda ou compra te dá XP. Quanto mais ativo, mais destaque na guild.</p>
+                </div>
+            </div>
+
+            <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" rel="noopener" class="btn-anunciar">
+                Entrar para a Guild
             </a>
         </section>
 
-        <section class="consoles-destaque">
-            <h3>Artigos em destaque</h3>
-            <div class="grid-consoles">
-                <div class="console-card">
-                    <img src="assets/consoles/spiderman-ps5.png" alt="PlayStation 5"> 
-                    <h4>Play station</h4>
-                    <p>A partir de R$ 150 </p>
+        <section class="como-funciona section-block">
+            <div class="section-header reveal">
+                <span class="section-tag">Como funciona</span>
+                <h3>3 passos e você já está dentro</h3>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card reveal">
+                    <span class="step-number">01</span>
+                    <h4>Entre na Guild</h4>
+                    <p>Clique no botão e entre no grupo VIP do WhatsApp. É grátis e moderado.</p>
                 </div>
-                <div class="console-card">
-                    <img src="assets/consoles/xbox-ghostrecon.png" alt="Xbox Series X">
-                    <h4>Xbox Series X</h4>
-                    <p>A partir de R$ 110</p>
+                <div class="step-card reveal">
+                    <span class="step-number">02</span>
+                    <h4>Anuncie ou busque</h4>
+                    <p>Publique seu loot ou navegue a vitrine pra achar o jogo que você quer.</p>
                 </div>
-                <div class="console-card">
-                    <img src="assets/consoles/the-last-of-us-playstation.png" alt="Nintendo Switch">
-                    <h4>Nintendo Switch</h4>
-                    <p>A partir de R$ 160</p>
-                </div>
-                <div class="console-card">
-                    <img src="assets/consoles/xbox-lordsfallen.png" alt="Wii U">
-                    <h4>Wii U</h4>
-                    <p>A partir de R$ 200</p>
+                <div class="step-card reveal">
+                    <span class="step-number">03</span>
+                    <h4>Feche o deal</h4>
+                    <p>Combine troca ou compra com gamers da sua cidade. Seguro e rápido.</p>
                 </div>
             </div>
         </section>
+
+        <section class="consoles-destaque section-block">
+            <div class="section-header reveal">
+                <span class="section-tag">Vitrine</span>
+                <h3>Loots em destaque</h3>
+                <p>Confira o que a galera de Campo Grande está negociando agora.</p>
+            </div>
+
+            <div class="grid-consoles">
+                <div class="console-card">
+                    <div class="console-card-img">
+                        <img src="assets/consoles/spiderman-ps5.png" alt="Spider-Man PS5">
+                        <span class="badge-plataforma ps5">PS5</span>
+                    </div>
+                    <h4>Spider-Man 2</h4>
+                    <p class="console-price">A partir de R$ 150</p>
+                    <a href="vitrine.html" class="btn-comprar">Ver na Vitrine</a>
+                </div>
+                <div class="console-card">
+                    <div class="console-card-img">
+                        <img src="assets/consoles/xbox-ghostrecon.png" alt="Ghost Recon Xbox">
+                        <span class="badge-plataforma xbox">Xbox</span>
+                    </div>
+                    <h4>Ghost Recon</h4>
+                    <p class="console-price">A partir de R$ 110</p>
+                    <a href="vitrine.html" class="btn-comprar">Ver na Vitrine</a>
+                </div>
+                <div class="console-card">
+                    <div class="console-card-img">
+                        <img src="assets/consoles/the-last-of-us-playstation.png" alt="The Last of Us">
+                        <span class="badge-plataforma ps5">PS4</span>
+                    </div>
+                    <h4>The Last of Us</h4>
+                    <p class="console-price">A partir de R$ 160</p>
+                    <a href="vitrine.html" class="btn-comprar">Ver na Vitrine</a>
+                </div>
+                <div class="console-card">
+                    <div class="console-card-img">
+                        <img src="assets/consoles/xbox-lordsfallen.png" alt="Lords of the Fallen">
+                        <span class="badge-plataforma multi">Multi</span>
+                    </div>
+                    <h4>Lords of the Fallen</h4>
+                    <p class="console-price">A partir de R$ 200</p>
+                    <a href="vitrine.html" class="btn-comprar">Ver na Vitrine</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="depoimentos section-block">
+            <div class="section-header reveal">
+                <span class="section-tag">Comunidade</span>
+                <h3>O que os gamers dizem</h3>
+            </div>
+            <div class="depoimentos-grid">
+                <blockquote class="depoimento-card reveal">
+                    <p>"Troquei meu FIFA zerado por Elden Ring. Economizei R$ 180 e ainda fiz um amigo pro coop."</p>
+                    <cite>@arthur_tarnished · Xbox</cite>
+                </blockquote>
+                <blockquote class="depoimento-card reveal">
+                    <p>"Cansada de random tóxico no online. Aqui achei squad fixo e ainda vendi jogos que não jogava mais."</p>
+                    <cite>@peach_princess_ms · Switch</cite>
+                </blockquote>
+                <blockquote class="depoimento-card reveal">
+                    <p>"Melhor que OLX. Todo mundo é da cidade, tem moderação e a linguagem é de gamer de verdade."</p>
+                    <cite>@master_chief_cg · PlayStation</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="cta-final section-block reveal">
+            <h3>Pronto pra subir de nível?</h3>
+            <p>Entre na guild, é grátis. Vagas limitadas para manter a qualidade da comunidade.</p>
+            <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" rel="noopener" class="btn-primary btn-primary--lg">
+                <span class="btn-icon">🎮</span>
+                Entrar na Guild Agora
+            </a>
+        </section>
     </main>
+    </div>
 
     <footer>
-        <p>UpGradegamer</p>
+        <p>UPGrade Gamer — Campo Grande/MS</p>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="anunciar.html">Anunciar</a>
+            <a href="vitrine.html">Vitrine</a>
+            <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" rel="noopener">WhatsApp</a>
+        </nav>
     </footer>
 
-    <script>
-        // Seus scripts de filtro e animação continuam aqui...
-        document.querySelectorAll('.filter-item input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                if(this.checked) {
-                    console.log(`Filtro selecionado: ${this.id}`);
-                }
-            });
-        });
+    <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" rel="noopener" class="cta-float" aria-label="Entrar na Guild pelo WhatsApp">
+        <span>⚔️</span>
+        Entrar na Guild
+    </a>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        });
-
-        document.querySelectorAll('.console-card, .beneficio-card').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    </script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

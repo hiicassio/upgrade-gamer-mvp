@@ -1,7 +1,7 @@
 // ================= CONFIG =================
 
 const CONFIG = {
-    API_URL: null, // 🔥 SEM BACKEND POR ENQUANTO
+    API_URL: null, //  SEM BACKEND POR ENQUANTO
     STORAGE_KEYS: {
         USERS: "usuarios_mvp",
         SESSION: "usuario_logado",

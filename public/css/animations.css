@@ -1,0 +1,129 @@
+/* Animações minimalistas gamer */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes floatDrift {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-14px) rotate(5deg); }
+}
+
+@keyframes blinkStart {
+    0%, 100% { opacity: 0.85; }
+    50% { opacity: 0.2; }
+}
+
+@keyframes controllerPulse {
+    0%, 100% { opacity: 0.75; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.06); filter: drop-shadow(0 0 6px rgba(253, 148, 82, 0.6)); }
+}
+
+@keyframes xpRise {
+    0% { transform: translateY(80%) scale(0); opacity: 0; }
+    15% { opacity: 1; }
+    100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+}
+
+@keyframes chipBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+@keyframes gridDrift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.06; }
+    50% { opacity: 0.12; }
+}
+
+.animate-fade-in { animation: fadeIn 0.7s ease-out both; }
+.animate-slide-up { animation: slideUp 0.7s ease-out both; }
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+.delay-3 { animation-delay: 0.36s; }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Game showcase */
+.game-marquee-track {
+    animation: marqueeScroll 28s linear infinite;
+}
+
+.game-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.game-chip img {
+    animation: chipBob 2.5s ease-in-out infinite;
+}
+
+.game-chip:nth-child(2n) img { animation-delay: 0.4s; }
+.game-chip:nth-child(3n) img { animation-delay: 0.8s; }
+
+.float-icon {
+    animation: floatDrift 5s ease-in-out infinite;
+    opacity: 0.3;
+    font-size: 1.6rem;
+}
+
+.float-icon--2 { animation-delay: 0.8s; animation-duration: 6s; }
+.float-icon--3 { animation-delay: 1.4s; animation-duration: 5.5s; }
+.float-icon--4 { animation-delay: 0.3s; animation-duration: 7s; }
+
+.pixel-controller svg {
+    animation: controllerPulse 2.5s ease-in-out infinite;
+}
+
+.xp-particle {
+    animation: xpRise 3.5s ease-in infinite;
+}
+
+.xp-particle:nth-child(1) { left: 8%; animation-delay: 0s; }
+.xp-particle:nth-child(2) { left: 28%; animation-delay: 0.9s; }
+.xp-particle:nth-child(3) { left: 52%; animation-delay: 0.4s; }
+.xp-particle:nth-child(4) { left: 72%; animation-delay: 1.6s; }
+.xp-particle:nth-child(5) { left: 88%; animation-delay: 1.1s; }
+
+.bg-grid {
+    animation: gridDrift 30s linear infinite;
+}
+
+.bg-glow {
+    animation: glowPulse 6s ease-in-out infinite;
+}
+
+.bg-glow--right {
+    animation-delay: 3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+}

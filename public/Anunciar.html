@@ -1,88 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPGrade - Preparar Loot</title>
-    
-    <meta property="og:title" content="UPGrade | Anunciar Jogo">
-    <meta property="og:description" content="Desapegue dos jogos que já zerou e faça rolos com a galera da sua cidade.">
-    
-    <link rel="stylesheet" href="css/style.css">
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+    <title>UPGrade — Preparar Loot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
 </head>
-
 <body>
+    <div class="bg-scene" aria-hidden="true"></div>
+    <div class="bg-effects" aria-hidden="true">
+        <div class="bg-grid"></div>
+        <div class="bg-glow bg-glow--left"></div>
+        <div class="bg-glow bg-glow--right"></div>
+    </div>
+
     <header class="header">
-        <div class="logo">
-            <h1>UPGRADE</h1>
+        <div class="header-inner">
+            <a href="index.html" class="logo"><h1>UP<span>Grade</span></h1></a>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="anunciar.html" class="active">Anunciar Jogo</a>
+                <a href="vitrine.html">Ver Vitrine</a>
+                <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" class="btn-login" target="_blank" rel="noopener">Lobby VIP</a>
+            </nav>
         </div>
-        <nav class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="Anunciar.html" class="active">Anunciar Jogo</a>
-            <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" class="btn-login" style="text-decoration: none;">Lobby VIP</a>
-        </nav>
+        <div class="nav-overlay"></div>
     </header>
 
-    <main class="container-anuncio">
-        <h2 style="color: #FD9452; text-align: center; margin-bottom: 20px;">Preparar Loot para Anúncio</h2>
-        
-        <div class="campo">
-            <label for="lootItem">Qual é o Loot? (Jogo ou Console)</label>
-            <input type="text" id="lootItem" placeholder="Ex: The Last of Us Part II" required>
+    <div class="site-container">
+        <div class="page-hero page-panel reveal">
+            <h2>Preparar Loot</h2>
+            <p>Preencha os dados do seu jogo. A moderação publica na vitrine.</p>
         </div>
-
-        <div class="campo">
-            <label for="lootPlataforma">Plataforma</label>
-            <select id="lootPlataforma" required>
-                <option value="">Selecione a plataforma</option>
-                <option value="PlayStation">PlayStation</option>
-                <option value="Xbox">Xbox</option>
-                <option value="Nintendo Switch">Nintendo Switch</option>
-                <option value="PC">PC</option>
-                <option value="Outros">Outros (Retrô, etc)</option>
-            </select>
-        </div>
-
-        <div class="campo">
-            <label for="lootQuest">A sua Quest (Preço ou o que quer em troca)</label>
-            <input type="text" id="lootQuest" placeholder="Ex: R$ 150 ou troco por Zelda" required>
-        </div>
-
-        <button class="btn-publicar" onclick="enviarParaWhatsApp()">Falar com a Moderação</button>
-    </main>
+        <main class="container-anuncio reveal">
+            <div class="campo">
+                <label for="lootItem">Qual é o Loot?</label>
+                <input type="text" id="lootItem" placeholder="Ex: The Last of Us Part II" required>
+            </div>
+            <div class="campo">
+                <label for="lootPlataforma">Plataforma</label>
+                <select id="lootPlataforma" required>
+                    <option value="">Selecione</option>
+                    <option>PlayStation</option><option>Xbox</option>
+                    <option>Nintendo Switch</option><option>PC</option><option>Outros</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="lootQuest">Sua Quest (preço ou troca)</label>
+                <input type="text" id="lootQuest" placeholder="Ex: R$ 150 ou troco por Zelda" required>
+            </div>
+            <button class="btn-publicar" type="button" onclick="enviarParaWhatsApp()">Falar com a Moderação</button>
+        </main>
+    </div>
 
     <footer>
-        <p>UPgrade</p>
+        <p>UPGrade Gamer — Campo Grande/MS</p>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a><a href="anunciar.html">Anunciar</a>
+            <a href="vitrine.html">Vitrine</a>
+            <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" rel="noopener">WhatsApp</a>
+        </nav>
     </footer>
 
     <script>
     function enviarParaWhatsApp() {
-        var loot = document.getElementById('lootItem').value;
-        var plataforma = document.getElementById('lootPlataforma').value;
-        var quest = document.getElementById('lootQuest').value;
-
-        if(!loot || !plataforma || !quest) {
-            alert("🕹️ Ops! Preencha qual é o Loot, a Plataforma e a sua Quest antes de enviar.");
-            return;
-        }
-
-        var texto = "Fala moderação! Quero anunciar um item na comunidade:%0A%0A";
-        texto += "🎮 *Loot:* " + loot + "%0A";
-        texto += "🕹️ *Plataforma:* " + plataforma + "%0A";
-        texto += "⚔️ *Minha Quest:* " + quest + "%0A%0A";
-        texto += "Segue a foto do jogo. Pode aprovar pro grupo?";
-
-        // ✅ Seu número atualizado com o código do país (55)
-        var numeroModera = "5511984962661"; 
-        
-        var linkZap = "https://wa.me/" + numeroModera + "?text=" + texto;
-
-        window.open(linkZap, '_blank');
+        const loot = document.getElementById('lootItem').value;
+        const plataforma = document.getElementById('lootPlataforma').value;
+        const quest = document.getElementById('lootQuest').value;
+        if (!loot || !plataforma || !quest) { alert('🕹️ Preencha todos os campos.'); return; }
+        const texto = `Fala moderação! Quero anunciar:%0A🎮 *Loot:* ${loot}%0A🕹️ *Plataforma:* ${plataforma}%0A⚔️ *Quest:* ${quest}`;
+        window.open(`https://wa.me/5511984962661?text=${texto}`, '_blank');
     }
     </script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
