@@ -1,7 +1,6 @@
 {
   "outputDirectory": "public",
   "rewrites": [
-    { "source": "/Anunciar.html", "destination": "/anunciar.html" },
     { "source": "/anunciar", "destination": "/anunciar.html" },
     { "source": "/vitrine", "destination": "/vitrine.html" }
   ]

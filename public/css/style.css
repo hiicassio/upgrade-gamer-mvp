@@ -588,9 +588,18 @@ main {
     box-shadow: var(--glow-pink);
 }
 
-.problema-icon {
-    font-size: 2rem;
+.problema-icon,
+.beneficio-emoji {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.65;
     margin-bottom: 1rem;
+    display: block;
 }
 
 .problema-card h4 {
@@ -635,12 +644,6 @@ main {
 .beneficio-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--glow-pink);
-}
-
-.beneficio-emoji {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.75rem;
 }
 
 .beneficio-card h4 {
@@ -927,16 +930,6 @@ footer p {
     color: var(--color-text-muted);
     font-weight: 600;
     margin-bottom: 0.75rem;
-}
-
-footer p::before {
-    content: '🎮 ';
-    color: var(--color-primary);
-}
-
-footer p::after {
-    content: ' 🎮';
-    color: var(--color-secondary);
 }
 
 .footer-nav {
@@ -1269,20 +1262,61 @@ footer p::after {
     margin-left: 0.25rem;
 }
 
-.game-float-icons {
+/* Gamer HUD — decoração minimalista no hero */
+.gamer-hud {
     position: absolute;
     inset: 0;
     pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
 }
 
-.float-icon {
+.gamer-hud__tag {
     position: absolute;
+    font-family: var(--font-display);
+    font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--color-primary);
+    opacity: 0.12;
+    user-select: none;
 }
 
-.float-icon--1 { top: 12%; left: 4%; }
-.float-icon--2 { top: 55%; left: 6%; }
-.float-icon--3 { top: 20%; right: 5%; }
-.float-icon--4 { bottom: 15%; right: 8%; }
+.gamer-hud__tag--1 { top: 14%; left: 5%; }
+.gamer-hud__tag--2 { top: 58%; left: 8%; }
+.gamer-hud__tag--3 { top: 22%; right: 6%; }
+.gamer-hud__tag--4 { bottom: 18%; right: 10%; }
+
+.press-start {
+    position: absolute;
+    top: clamp(1.25rem, 3vw, 2rem);
+    right: clamp(1.25rem, 3vw, 2rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--color-text-muted);
+    opacity: 0.55;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.press-start__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 8px rgba(253, 148, 82, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
 
 .pixel-controller {
     display: inline-flex;
@@ -1475,7 +1509,18 @@ footer p::after {
 
     .game-showcase::after {
         display: none;
-    }}
+    }
+
+    .press-start {
+        font-size: 0.52rem;
+        letter-spacing: 0.16em;
+    }
+
+    .gamer-hud__tag--2,
+    .gamer-hud__tag--4 {
+        display: none;
+    }
+}
 
 /* Telas muito estreitas (celular) — 1 coluna */
 @media (max-width: 480px) and (pointer: coarse) {

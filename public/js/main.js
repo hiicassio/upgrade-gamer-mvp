@@ -1,12 +1,11 @@
 /* UPGrade — scripts compartilhados */
 
-const WHATSAPP_GUILD = 'https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP';
-
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollReveal();
     initHeaderScroll();
     initConsoleFilters();
+    initAnunciarForm();
 });
 
 function initMobileMenu() {
@@ -92,4 +91,27 @@ function initConsoleFilters() {
             }
         });
     });
+}
+
+function initAnunciarForm() {
+    const btn = document.querySelector('.btn-publicar');
+    if (!btn) return;
+
+    btn.addEventListener('click', enviarParaWhatsApp);
+}
+
+function enviarParaWhatsApp() {
+    const loot = document.getElementById('lootItem')?.value.trim();
+    const plataforma = document.getElementById('lootPlataforma')?.value;
+    const quest = document.getElementById('lootQuest')?.value.trim();
+
+    if (!loot || !plataforma || !quest) {
+        alert('Preencha todos os campos.');
+        return;
+    }
+
+    const texto = `Oi! Quero anunciar um jogo:%0A%0AJogo: ${loot}%0APlataforma: ${plataforma}%0AValor ou troca: ${quest}`;
+    const phone = UPGRADE_CONFIG?.WHATSAPP_MOD || '5511984962661';
+
+    window.open(`https://wa.me/${phone}?text=${texto}`, '_blank');
 }

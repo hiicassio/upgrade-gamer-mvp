@@ -1,0 +1,7 @@
+// 1. Primeiro as configurações globais
+@import 'variaveis';
+
+// 2. Depois os componentes (o caminho deve bater com a sua pasta)
+@import 'componentes/header';
+@import 'componentes/buttons';
+@import 'componentes/cards';

@@ -1,0 +1,35 @@
+// Variáveis de Cores (Substitua os códigos hex pelo nome da variável no resto do código depois)
+$orange-primary: #ff8c00; // Ou o seu código hexadecimal
+$pink-accent: #ff007f;
+$bg-dark: #1a1a1f;
+$bg-card: #2a2a35;
+$bg-card-hover: #1f1f28;
+
+// Reset Global
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+body {
+    background-image: url("../assets/images/imagem-bacckgroud-landing.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-dark;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: $bg-card-hover; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $orange-primary, $pink-accent);
+    border-radius: 5px;
+}

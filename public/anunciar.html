@@ -72,8 +72,8 @@
         const loot = document.getElementById('lootItem').value;
         const plataforma = document.getElementById('lootPlataforma').value;
         const quest = document.getElementById('lootQuest').value;
-        if (!loot || !plataforma || !quest) { alert('🕹️ Preencha todos os campos.'); return; }
-        const texto = `Fala moderação! Quero anunciar:%0A🎮 *Loot:* ${loot}%0A🕹️ *Plataforma:* ${plataforma}%0A⚔️ *Quest:* ${quest}`;
+        if (!loot || !plataforma || !quest) { alert('Preencha todos os campos.'); return; }
+        const texto = `Oi! Quero anunciar um jogo:%0A%0AJogo: ${loot}%0APlataforma: ${plataforma}%0AValor ou troca: ${quest}`;
         window.open(`https://wa.me/5511984962661?text=${texto}`, '_blank');
     }
     </script>

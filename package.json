@@ -1,5 +1,10 @@
 {
-  "dependencies": {
-    "@vercel/analytics": "^2.0.1"
+  "name": "xpzonecg-cadastro",
+  "private": true,
+  "scripts": {
+    "start": "serve public"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
   }
 }
