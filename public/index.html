@@ -57,6 +57,9 @@
     <div class="site-container">
     <main>
         <section class="hero">
+            <div class="hero-art" aria-hidden="true"></div>
+            <div class="hero-vignette" aria-hidden="true"></div>
+
             <div class="gamer-hud" aria-hidden="true">
                 <span class="gamer-hud__tag gamer-hud__tag--1">START</span>
                 <span class="gamer-hud__tag gamer-hud__tag--2">GG</span>
@@ -69,73 +72,74 @@
                 PRESS START
             </div>
 
-            <div class="hero-content">
-                <span class="hero-badge animate-fade-in">Campo Grande/MS · Comunidade gratuita</span>
+            <div class="hero-body">
+                <div class="hero-content">
+                    <span class="hero-badge animate-fade-in">Campo Grande/MS · Comunidade gratuita</span>
 
-                <h2 class="hero-title animate-slide-up">
-                    Jogos caros?<br>
-                    <span class="text-gradient">Jogue com quem entende.</span>
-                </h2>
+                    <h2 class="hero-title animate-slide-up">
+                        Jogos caros?<br>
+                        <span class="text-gradient">Jogue com quem entende.</span>
+                    </h2>
 
-                <p class="hero-subtitle animate-slide-up delay-1">
-                    Pare de pagar preço de lançamento e jogar com aleatórios. Na UPGrade você troca, compra e vende com gamers da sua cidade — em um ambiente seguro e moderado.
-                </p>
+                    <p class="hero-subtitle animate-slide-up delay-1">
+                        Pare de pagar preço de lançamento e jogar com aleatórios. Na UPGrade você troca, compra e vende com gamers da sua cidade — em um ambiente seguro e moderado.
+                    </p>
 
-                <div class="hero-cta animate-slide-up delay-2">
-                    <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" rel="noopener" class="btn-primary">
-                        Entrar na Guild — Grátis
-                    </a>
-                    <a href="vitrine.html" class="btn-secondary">Ver Loots Disponíveis</a>
-                </div>
-
-                <section class="game-showcase glass reveal" aria-label="Jogos em negociação">
-                    <div class="xp-particles" aria-hidden="true">
-                        <span class="xp-particle"></span>
-                        <span class="xp-particle"></span>
-                        <span class="xp-particle"></span>
-                        <span class="xp-particle"></span>
-                        <span class="xp-particle"></span>
+                    <div class="hero-cta animate-slide-up delay-2">
+                        <a href="https://chat.whatsapp.com/DLlMZGtaeJPGh1DOwT4HQP" target="_blank" rel="noopener" class="btn-primary">
+                            Entrar na Guild — Grátis
+                        </a>
+                        <a href="vitrine.html" class="btn-secondary">Ver Loots Disponíveis</a>
                     </div>
-                    <p class="game-showcase-label">Anúncios recentes</p>
-                    <div class="game-marquee">
-                        <div class="game-marquee-track">
-                            <div class="game-chip"><img src="assets/vitrine/elden-ring.jpg" alt=""><span>Elden Ring <span class="chip-price">R$ 220</span></span></div>
-                            <div class="game-chip"><img src="assets/vitrine/gta-5.jpg" alt=""><span>GTA V <span class="chip-price">R$ 90</span></span></div>
-                            <div class="game-chip"><img src="assets/vitrine/mario-kart-world.jpg" alt=""><span>Mario Kart <span class="chip-price">Troca</span></span></div>
-                            <div class="game-chip"><img src="assets/vitrine/resident-evil.jpg" alt=""><span>RE4 <span class="chip-price">R$ 180</span></span></div>
-                            <div class="game-chip"><img src="assets/consoles/spiderman-ps5.png" alt=""><span>Spider-Man 2 <span class="chip-price">R$ 150</span></span></div>
-                            <div class="game-chip"><img src="assets/consoles/xbox-ghostrecon.png" alt=""><span>Ghost Recon <span class="chip-price">R$ 110</span></span></div>
-                            <div class="game-chip"><img src="assets/vitrine/elden-ring.jpg" alt=""><span>Elden Ring <span class="chip-price">R$ 220</span></span></div>
-                            <div class="game-chip"><img src="assets/vitrine/gta-5.jpg" alt=""><span>GTA V <span class="chip-price">R$ 90</span></span></div>
-                            <div class="game-chip"><img src="assets/vitrine/mario-kart-world.jpg" alt=""><span>Mario Kart <span class="chip-price">Troca</span></span></div>
-                            <div class="game-chip"><img src="assets/vitrine/resident-evil.jpg" alt=""><span>RE4 <span class="chip-price">R$ 180</span></span></div>
-                            <div class="game-chip"><img src="assets/consoles/spiderman-ps5.png" alt=""><span>Spider-Man 2 <span class="chip-price">R$ 150</span></span></div>
-                            <div class="game-chip"><img src="assets/consoles/xbox-ghostrecon.png" alt=""><span>Ghost Recon <span class="chip-price">R$ 110</span></span></div>
+
+                    <section class="game-showcase glass reveal" aria-label="Jogos em negociação">
+                        <div class="xp-particles" aria-hidden="true">
+                            <span class="xp-particle"></span>
+                            <span class="xp-particle"></span>
+                            <span class="xp-particle"></span>
+                            <span class="xp-particle"></span>
+                            <span class="xp-particle"></span>
+                        </div>
+                        <p class="game-showcase-label">Anúncios recentes</p>
+                        <div class="game-marquee">
+                            <div class="game-marquee-track">
+                                <div class="game-chip"><img src="assets/vitrine/elden-ring.jpg" alt=""><span>Elden Ring <span class="chip-price">R$ 120</span></span></div>
+                                <div class="game-chip"><img src="assets/vitrine/gta-5.jpg" alt=""><span>GTA V <span class="chip-price">R$ 90</span></span></div>
+                                <div class="game-chip"><img src="assets/vitrine/mario-kart-world.jpg" alt=""><span>Mario Kart <span class="chip-price">Troca</span></span></div>
+                                <div class="game-chip"><img src="assets/vitrine/resident-evil.jpg" alt=""><span>RE4 <span class="chip-price">R$ 110</span></span></div>
+                                <div class="game-chip"><img src="assets/consoles/spiderman-ps5.png" alt=""><span>Spider-Man 2 <span class="chip-price">R$ 150</span></span></div>
+                                <div class="game-chip"><img src="assets/consoles/xbox-ghostrecon.png" alt=""><span>Ghost Recon <span class="chip-price">R$ 110</span></span></div>
+                                <div class="game-chip"><img src="assets/vitrine/elden-ring.jpg" alt=""><span>Elden Ring <span class="chip-price">R$ 120</span></span></div>
+                                <div class="game-chip"><img src="assets/vitrine/gta-5.jpg" alt=""><span>GTA V <span class="chip-price">R$ 90</span></span></div>
+                                <div class="game-chip"><img src="assets/vitrine/mario-kart-world.jpg" alt=""><span>Mario Kart <span class="chip-price">Troca</span></span></div>
+                                <div class="game-chip"><img src="assets/vitrine/resident-evil.jpg" alt=""><span>RE4 <span class="chip-price">R$ 110</span></span></div>
+                                <div class="game-chip"><img src="assets/consoles/spiderman-ps5.png" alt=""><span>Spider-Man 2 <span class="chip-price">R$ 150</span></span></div>
+                                <div class="game-chip"><img src="assets/consoles/xbox-ghostrecon.png" alt=""><span>Ghost Recon <span class="chip-price">R$ 110</span></span></div>
+                            </div>
+                        </div>
+                        <div class="pixel-controller" aria-hidden="true">
+                            <svg viewBox="0 0 28 20" fill="none"><rect x="1" y="6" width="26" height="12" rx="4" stroke="#FD9452" stroke-width="1.5" fill="rgba(0,0,0,0.2)"/><circle cx="8" cy="12" r="2" fill="#E43474"/><rect x="18" y="10" width="2" height="4" fill="#FD9452"/><rect x="16" y="12" width="6" height="2" fill="#FD9452"/></svg>
+                            <span>+XP</span>
+                        </div>
+                    </section>
+
+                    <div class="hero-stats animate-fade-in delay-3">
+                        <div class="stat-card">
+                            <strong>200+</strong>
+                            <span>Gamers ativos</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong>50%</strong>
+                            <span>Economia em trocas</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong>100%</strong>
+                            <span>Local e seguro</span>
                         </div>
                     </div>
-                    <div class="pixel-controller" aria-hidden="true">
-                        <svg viewBox="0 0 28 20" fill="none"><rect x="1" y="6" width="26" height="12" rx="4" stroke="#FD9452" stroke-width="1.5" fill="rgba(0,0,0,0.2)"/><circle cx="8" cy="12" r="2" fill="#E43474"/><rect x="18" y="10" width="2" height="4" fill="#FD9452"/><rect x="16" y="12" width="6" height="2" fill="#FD9452"/></svg>
-                        <span>+XP</span>
-                    </div>
-                </section>
-
-                <div class="hero-stats animate-fade-in delay-3">
-                    <div class="stat-card">
-                        <strong>200+</strong>
-                        <span>Gamers ativos</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>50%</strong>
-                        <span>Economia em trocas</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>100%</strong>
-                        <span>Local e seguro</span>
-                    </div>
                 </div>
-            </div>
 
-            <div class="filtros">
+                <div class="filtros">
                 <h3>Qual plataforma você joga?</h3>
                 <div class="console-filters">
                     <div class="filter-item">
@@ -166,6 +170,7 @@
                         </label>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
